@@ -73,7 +73,15 @@ app.use("/*", serveStatic({ root: "./public" }));
 
 // Start the server
 console.log("Server starting on http://localhost:3000");
+
+Bun.serve({
+  ...app,
+  // timeout in 60s
+  idleTimeout: 9999999999999
+})
+/*
 export default {
   port: 3000,
   fetch: app.fetch,
-}; 
+  idleTimeout: 9999999999999,
+}; */
