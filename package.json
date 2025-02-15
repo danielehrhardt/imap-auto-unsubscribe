@@ -3,7 +3,8 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "start": "bun index.ts"
+    "start": "bun run server.ts",
+    "cli": "bun run index.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
@@ -12,11 +13,15 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@hono/node-server": "^1.13.8",
     "@types/cheerio": "^0.22.35",
     "@types/imap": "^0.8.42",
     "@types/mailparser": "^3.4.5",
+    "@types/ws": "^8.5.14",
     "cheerio": "^1.0.0",
+    "hono": "^4.7.1",
     "imap": "^0.8.19",
-    "mailparser": "^3.7.2"
+    "mailparser": "^3.7.2",
+    "ws": "^8.18.0"
   }
 }
