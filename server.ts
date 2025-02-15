@@ -77,7 +77,7 @@ console.log("Server starting on http://localhost:3000");
 Bun.serve({
   ...app,
   // timeout in 60s
-  idleTimeout: 9999999999999
+  idleTimeout: 255
 })
 /*
 export default {
