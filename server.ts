@@ -72,8 +72,8 @@ app.post("/api/start", async (c) => {
 app.use("/*", serveStatic({ root: "./public" }));
 
 // Start the server
-console.log("Server starting on http://localhost:4000");
+console.log("Server starting on http://localhost:3000");
 export default {
-  port: 4000,
+  port: 3000,
   fetch: app.fetch,
 }; 
