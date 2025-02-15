@@ -101,7 +101,7 @@ export async function processEmails(
               const $ = cheerio.load(htmlBody);
               $("a").each((_, elem) => {
                 const linkText = $(elem).text().trim();
-                const href = $(elem).attr("href")!;
+                const href = $(elem).attr("href");
                 if (
                   href &&
                   (linkText.toLowerCase().includes("unsubscribe") ||
@@ -144,7 +144,7 @@ export async function processEmails(
 }
 
 async function processLink(href: string) {
-  appendFileSync("unsubscribeLinks.txt", href + os.EOL);
+  // appendFileSync("unsubscribeLinks.txt", href + os.EOL);
   try {
     await fetch(href);
   } catch (error) {
@@ -153,14 +153,13 @@ async function processLink(href: string) {
 }
 
 // Only run if this file is called directly
-if (import.meta.url === new URL(import.meta.url).href) {
-  const config: EmailConfig = {
-    email: "",
-    password: "",
-    imapServer: "",
-  };
-  
-  processEmails(config).catch((err) => {
-    console.error("Unexpected error: ", err);
-  });
-}
+/*
+const config: EmailConfig = {
+  email: "",
+  password: "",
+  imapServer: "",
+};
+
+processEmails(config).catch((err) => {
+  console.error("Unexpected error: ", err);
+});*/

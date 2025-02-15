@@ -60,7 +60,6 @@ app.post("/api/start", async (c) => {
   if (!config.email || !config.password || !config.imapServer) {
     return c.json({ error: "Missing required configuration" }, 400);
   }
-
   // Start processing in background
   processEmails(config, broadcastLog).catch((error) => {
     broadcastLog(`Error: ${error.message}`);
